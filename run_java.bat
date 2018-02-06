@@ -1,0 +1,1 @@
+java -cp "C:\dev\JavaTestbench\out\production\JavaTestbench" %1
