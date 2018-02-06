@@ -58,19 +58,15 @@ public class GenomicRangeQuery {
         counters[0] = new Counter();
 
         for (int i = 0; i < S.length(); ++i) {
-            if (i > 0) {
+            if (i > 0)
                 counters[i] = new Counter(counters[i - 1]);
-            }
-            char letter = S.charAt(i);
-            counters[i].increment(letter);
+            
+            counters[i].increment(S.charAt(i));
         }
 
         int[] output = new int[P.length];
         for (int i = 0; i < P.length; ++i) {
-            Counter counter = new Counter();
-            if (P[i] != 0) {
-                counter = counters[P[i] - 1];
-            }
+            Counter counter = (P[i] != 0) ? counters[P[i] - 1] : new Counter();
             output[i] = counters[Q[i]].getMinImpact(counter);
         }
 
