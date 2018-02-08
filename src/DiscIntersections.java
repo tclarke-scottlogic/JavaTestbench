@@ -91,7 +91,7 @@ public class DiscIntersections {
     }
 
     public int solve(int[] input){
-        return solve_quick(input);
+        return solve_slow(input);
     }
 
     @Test
